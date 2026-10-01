@@ -1,0 +1,357 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Wencan Feng — graduate researcher in aerial robotics, end-to-end planning, and vision-language-action systems.">
+  <meta name="theme-color" content="#ffffff">
+  <title>Wencan Feng</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231f2937'/%3E%3Ctext x='32' y='41' text-anchor='middle' font-family='Arial' font-size='27' font-weight='700' fill='white'%3EWF%3C/text%3E%3C/svg%3E">
+  <style>
+    :root {
+      --ink: #202124;
+      --muted: #666b73;
+      --light: #f6f7f8;
+      --line: #e4e6e8;
+      --blue: #1769aa;
+      --blue-dark: #0e4f82;
+      --green: #237a57;
+      --max: 1040px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-width: 320px;
+      color: var(--ink);
+      background: #fff;
+      font: 400 16px/1.72 -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: var(--blue); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    a:hover { color: var(--blue-dark); }
+    :focus-visible { outline: 3px solid #8fc5ea; outline-offset: 3px; }
+    .skip-link { position: fixed; top: 10px; left: 10px; z-index: 100; transform: translateY(-150%); padding: 8px 12px; background: #fff; border: 1px solid var(--line); }
+    .skip-link:focus { transform: none; }
+
+    .site-header {
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 255, 255, .96);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+    .nav {
+      width: min(calc(100% - 40px), var(--max));
+      min-height: 58px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .nav-name { color: var(--ink); font-weight: 650; text-decoration: none; letter-spacing: -.01em; }
+    .nav-links { display: flex; flex-wrap: wrap; gap: 24px; font-size: 14px; }
+    .nav-links a { color: #51565d; text-decoration: none; }
+    .nav-links a:hover { color: var(--blue); }
+    .lang-zh { display: none; }
+    html[lang="zh-CN"] .lang-en { display: none; }
+    html[lang="zh-CN"] .lang-zh { display: inline; }
+    .lang-toggle {
+      min-width: 48px;
+      height: 30px;
+      margin: -4px 0;
+      padding: 0 9px;
+      border: 1px solid #cfd4d9;
+      border-radius: 999px;
+      color: #51565d;
+      background: #fff;
+      font: inherit;
+      line-height: 1;
+      cursor: pointer;
+    }
+    .lang-toggle:hover { color: var(--blue); border-color: #9ebdd5; background: #f7fbfe; }
+
+    .layout {
+      width: min(calc(100% - 40px), var(--max));
+      margin: 56px auto 80px;
+      display: grid;
+      grid-template-columns: 220px minmax(0, 1fr);
+      gap: 68px;
+      align-items: start;
+    }
+    .profile { position: sticky; top: 94px; text-align: center; }
+    .avatar {
+      width: 154px;
+      height: 154px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      display: block;
+      object-fit: cover;
+      object-position: 50% 42%;
+      border: 3px solid #fff;
+      box-shadow: 0 0 0 1px #d9dde1, 0 8px 24px rgba(23, 33, 45, .12);
+    }
+    .profile h1 { margin: 0; font: 700 25px/1.25 Georgia, "Times New Roman", serif; }
+    .profile-role { margin: 8px 0 0; color: var(--muted); font-size: 14px; line-height: 1.55; }
+    .profile-place { margin: 8px 0 0; color: #777d84; font-size: 13px; }
+    .profile-links { margin-top: 20px; display: grid; gap: 7px; font-size: 14px; }
+    .profile-links a { text-decoration: none; }
+
+    main { min-width: 0; }
+    section { scroll-margin-top: 86px; padding-bottom: 52px; }
+    section + section { padding-top: 4px; }
+    .intro { padding-bottom: 46px; }
+    .hello { margin: 0 0 22px; font: 700 clamp(30px, 5vw, 42px)/1.2 Georgia, "Times New Roman", serif; letter-spacing: -.02em; }
+    .greetings { margin: -9px 0 18px; color: var(--muted); font-size: 14px; }
+    .intro p { margin: 0 0 14px; }
+    .interests { color: #4c5157; }
+    .interests strong { color: var(--ink); }
+    .contact-line { color: #4c5157; }
+
+    h2 {
+      margin: 0 0 22px;
+      padding-bottom: 9px;
+      border-bottom: 1px solid var(--line);
+      font: 700 27px/1.25 Georgia, "Times New Roman", serif;
+      letter-spacing: -.015em;
+    }
+    h3 { margin: 0; font-size: 17px; line-height: 1.45; }
+    p { margin-top: 0; }
+
+    .news { margin: 0; padding: 0; list-style: none; }
+    .news li { display: grid; grid-template-columns: 82px minmax(0, 1fr); gap: 12px; margin: 0 0 12px; }
+    .news time { color: var(--muted); font-size: 14px; font-variant-numeric: tabular-nums; }
+
+    .papers { display: grid; gap: 28px; }
+    .paper { display: block; }
+    .paper-title { font-weight: 700; line-height: 1.48; }
+    .authors { margin: 5px 0 2px; color: #50555b; font-size: 14px; line-height: 1.58; }
+    .venue { margin: 0; color: var(--muted); font-size: 14px; font-style: italic; }
+    .accepted { color: var(--green); font-style: normal; font-weight: 650; }
+    .author-note { margin: 3px 0 0; color: #777d84; font-size: 13px; }
+    .paper-links { margin-top: 7px; display: flex; flex-wrap: wrap; gap: 12px; font-size: 14px; }
+    .paper-links a { text-decoration: none; }
+    .paper-demos { margin-top: 9px; }
+    .paper-demos summary {
+      width: fit-content;
+      color: var(--blue);
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 600;
+      user-select: none;
+    }
+    .paper-demos[open] summary { margin-bottom: 12px; }
+    .paper-video {
+      display: block;
+      width: 100%;
+      max-width: 720px;
+      aspect-ratio: 16 / 9;
+      border-radius: 8px;
+      background: #000;
+      box-shadow: 0 4px 18px rgba(23, 33, 45, .12);
+    }
+    .video-caption { margin: 7px 0 0; color: var(--muted); font-size: 13px; }
+
+    .project-list { display: grid; gap: 28px; }
+    .project { display: grid; grid-template-columns: 116px minmax(0, 1fr); gap: 22px; }
+    .project-meta { color: var(--muted); font-size: 13px; line-height: 1.55; }
+    .project p { margin: 6px 0 0; color: #555b62; font-size: 15px; }
+    .tag { display: inline-block; margin-top: 9px; padding: 2px 8px; border-radius: 4px; color: #4d5964; background: var(--light); font-size: 12px; }
+
+    .education { display: grid; gap: 22px; }
+    .edu-item { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 24px; }
+    .edu-item p { margin: 4px 0 0; color: var(--muted); font-size: 14px; }
+    .edu-item time { color: var(--muted); font-size: 14px; white-space: nowrap; }
+    .skills { margin: 24px 0 0; color: #555b62; font-size: 15px; }
+
+    footer {
+      width: min(calc(100% - 40px), var(--max));
+      margin: 0 auto;
+      padding: 24px 0 36px;
+      border-top: 1px solid var(--line);
+      color: #858a90;
+      font-size: 13px;
+      text-align: center;
+    }
+
+    @media (max-width: 760px) {
+      .nav { min-height: 54px; }
+      .nav-links { gap: 14px; }
+      .nav-links a:nth-child(3) { display: none; }
+      .layout { margin-top: 36px; grid-template-columns: 1fr; gap: 44px; }
+      .profile { position: static; }
+      .avatar { width: 124px; height: 124px; font-size: 35px; }
+      .profile-links { display: flex; justify-content: center; gap: 18px; }
+      .intro { text-align: left; }
+    }
+
+    @media (max-width: 520px) {
+      .nav, .layout, footer { width: min(calc(100% - 28px), var(--max)); }
+      .nav-links a:nth-child(2) { display: none; }
+      .layout { margin-bottom: 52px; }
+      .hello { font-size: 26px; }
+      section { padding-bottom: 42px; }
+      .news li { grid-template-columns: 70px minmax(0, 1fr); gap: 8px; }
+      .project { grid-template-columns: 1fr; gap: 4px; }
+      .project-meta br { display: none; }
+      .edu-item { grid-template-columns: 1fr; gap: 2px; }
+    }
+  </style>
+</head>
+<body>
+<p><a class="skip-link" href="#main"><span class="lang-en">Skip to content</span><span class="lang-zh" lang="zh-CN">跳到正文</span></a></p>
+<header class="site-header"><nav class="nav" aria-label="Primary navigation"><a class="nav-name" href="#top">Wencan Feng</a>
+<div class="nav-links"><a href="#about"><span class="lang-en">About</span><span class="lang-zh" lang="zh-CN">关于</span></a> <a href="#publications"><span class="lang-en">Publications</span><span class="lang-zh" lang="zh-CN">论文</span></a> <a href="#projects"><span class="lang-en">Projects</span><span class="lang-zh" lang="zh-CN">项目</span></a> <a href="#education"><span class="lang-en">CV</span><span class="lang-zh" lang="zh-CN">经历</span></a> <button class="lang-toggle" id="language-toggle" type="button" aria-label="切换到中文">中文</button></div>
+</nav></header>
+<div class="layout" id="top">
+<aside class="profile" aria-label="Profile"><img class="avatar" src="assets/fpv-life.jpg" alt="Wencan Feng flying an FPV drone outdoors" width="1200" height="1200">
+<h1>Wencan Feng</h1>
+<p class="profile-role"><span class="lang-en">M.Eng. Student<br>Aerial Robotics 🤖</span><span class="lang-zh" lang="zh-CN">硕士研究生<br>空中机器人 🤖</span></p>
+<p class="profile-place"><span class="lang-en">Tianjin University<br>Tianjin, China</span><span class="lang-zh" lang="zh-CN">天津大学<br>中国 &middot; 天津</span></p>
+<div class="profile-links"><a href="https://github.com/Mioulo" target="_blank" rel="noopener noreferrer">🐙 GitHub</a> <a href="#publications">🎓 <span class="lang-en">Publications</span><span class="lang-zh" lang="zh-CN">论文</span></a></div>
+</aside>
+<main id="main">
+<section class="intro" id="about">
+<h2 class="hello"><span class="lang-en">Hi, I'm Wencan Feng 👋</span><span class="lang-zh" lang="zh-CN">你好，我是冯文灿 👋</span></h2>
+<p class="greetings"><span class="lang-en">Hello! Welcome to my homepage.</span><span class="lang-zh" lang="zh-CN">你好！欢迎来到我的个人主页。</span></p>
+<p><span class="lang-en">I am a master's student in Control Theory and Control Engineering at <strong>Tianjin University</strong>. My research focuses on learning-based planning and control, with particular interests in end-to-end motion planning, multimodal learning, and embodied intelligence.</span><span class="lang-zh" lang="zh-CN">我目前就读于<strong>天津大学</strong>控制理论与控制工程专业硕士。我的研究聚焦于学习式规划与控制，尤其关注端到端运动规划、多模态学习与具身智能。</span></p>
+<p><span class="lang-en">My previous work has mainly centered on end-to-end planning for agile quadrotors, including monocular and omnidirectional visual planning, with lightweight onboard deployment and real-world flight validation. More recently, I started exploring vision-language-action models for Embodied AI.</span><span class="lang-zh" lang="zh-CN">我此前的工作主要围绕敏捷四旋翼的端到端规划展开，包括单目与全向视觉规划，并完成轻量化板端部署与实机飞行验证。近期，我开始探索面向具身智能的视觉-语言-动作模型。</span></p>
+<p class="interests"><span class="lang-en"><strong>🔬 Research interests:</strong> aerial robotics, end-to-end planning, vision-language-action models, multimodal learning, embodied intelligence, sim-to-real transfer, and efficient robotic inference.</span><span class="lang-zh" lang="zh-CN"><strong>🔬 研究方向：</strong>空中机器人、端到端规划、视觉-语言-动作模型、多模态学习、具身智能、仿真到实机迁移与高效机器人推理。</span></p>
+<p class="contact-line"><span class="lang-en">👋 If you are interested in my work, please feel free to reach out for discussions or collaborations via 3021001416@tju.edu.cn or <a href="https://github.com/Mioulo" target="_blank" rel="noopener noreferrer">GitHub</a>.</span><span class="lang-zh" lang="zh-CN">👋 如果你对我的工作感兴趣，欢迎通过 3021001416@tju.edu.cn 或 <a href="https://github.com/Mioulo" target="_blank" rel="noopener noreferrer">GitHub</a> 与我交流或探讨合作。</span></p>
+</section>
+<section id="news">
+<h2>🌈 <span class="lang-en">What's New</span><span class="lang-zh" lang="zh-CN">最新动态</span><time></time></h2>
+<ul class="news">
+<li><time>2026.08</time><span><span class="lang-en">🎉 <strong>YOPOv2-Tracker</strong> was accepted by <em>IEEE Transactions on Robotics</em>.</span><span class="lang-zh" lang="zh-CN">🎉 <strong>YOPOv2-Tracker</strong> 被 <em>IEEE Transactions on Robotics</em> 接收。</span></span></li>
+<li><time>2025.09</time><span><span class="lang-en">🎓 Started my M.Eng. study at Tianjin University.</span><span class="lang-zh" lang="zh-CN">🎓 开始在天津大学攻读硕士学位。</span></span></li>
+<li><time>2025.06</time><span><span class="lang-en">🎉 The code and hardware design of YOPO are now publicly available on <a href="https://github.com/TJU-Aerial-Robotics/YOPO" target="_blank" rel="noopener noreferrer">YOPO</a>.</span><span class="lang-zh" lang="zh-CN">🎉 YOPO 的代码与硬件设计现已在 <a href="https://github.com/TJU-Aerial-Robotics/YOPO" target="_blank" rel="noopener noreferrer">YOPO</a> 项目中公开。</span></span></li>
+</ul>
+</section>
+<section id="publications">
+<h2>🎓 <span class="lang-en">Selected Publications</span><span class="lang-zh" lang="zh-CN">代表论文</span></h2>
+<div class="papers">
+<article class="paper">
+<div class="paper-title">Learning Geometry-Aware Planning Representations for Monocular Flight with Cross-Modal Supervision</div>
+<p class="authors"><strong>Wencan Feng</strong>, Bailing Tian, Yulin Hui, Zhiyu Li, Junjie Lu<sup>*</sup></p>
+<p class="venue">IEEE Robotics and Automation Letters (RA-L), under review.</p>
+<details class="paper-demos">
+<summary>🎬 Demo Video</summary>
+<video width="300" height="150" class="paper-video" controls="controls" playsinline="" preload="none" poster="assets/videos/ral-poster.jpg" aria-label="RA-L monocular flight demo video">
+                <source src="assets/videos/ral-monocular.mp4" type="video/mp4">
+                Your browser does not support HTML5 video.
+              </video>
+<p class="video-caption">Monocular agile-flight experiments and qualitative results.</p>
+</details>
+</article>
+<article class="paper">
+<div class="paper-title">An End-to-End Omnidirectional Planner for Quadrotors with Multimodal Predictions</div>
+<p class="authors">Junjie Lu<sup>&dagger;</sup>, <strong>Wencan Feng<sup>&dagger;</sup></strong>, Xuewei Zhang, Yulin Hui, Kangli Wang, Weihong Xu, Hongming Shen, Zhiyu Li, Qingpeng Li, Xinnan Zhang, Danwei Wang, Bailing Tian</p>
+<p class="venue">IEEE Transactions on Automation Science and Engineering (T-ASE), under review.</p>
+<p class="author-note"><sup>&dagger;</sup> Equal contribution.</p>
+<details class="paper-demos">
+<summary>🎬 Demo Video</summary>
+<video width="300" height="150" class="paper-video" controls="controls" playsinline="" preload="none" poster="assets/videos/tase-poster.jpg" aria-label="T-ASE omnidirectional planning demo video">
+                <source src="assets/videos/tase-omnidirectional.mp4" type="video/mp4">
+                Your browser does not support HTML5 video.
+              </video>
+<p class="video-caption">Omnidirectional planning experiments and real-world demonstrations.</p>
+</details>
+</article>
+<article class="paper">
+<div class="paper-title">YOPOv2-Tracker: An End-to-End Agile Tracking and Navigation Framework</div>
+<p class="authors">Junjie Lu, Yulin Hui, Xuewei Zhang, <strong>Wencan Feng</strong>, Hongming Shen, Zhiyu Li, Bailing Tian</p>
+<p class="venue">IEEE Transactions on Robotics (T-RO), 2026. <span class="accepted">🎉 Accepted.</span></p>
+<div class="paper-links"><a href="https://arxiv.org/abs/2505.06923" target="_blank" rel="noopener noreferrer">arXiv</a> <a href="https://doi.org/10.1109/TRO.2026.3721689" target="_blank" rel="noopener noreferrer">DOI</a> <a href="https://github.com/TJU-Aerial-Robotics/YOPO" target="_blank" rel="noopener noreferrer">GitHub</a></div>
+<details class="paper-demos">
+<summary>🎬 Demo Video</summary>
+<video width="300" height="150" class="paper-video" controls="controls" playsinline="" preload="none" poster="assets/videos/tro-poster.jpg" aria-label="YOPOv2-Tracker demo video">
+                <source src="assets/videos/tro-yopov2-tracker.mp4" type="video/mp4">
+                Your browser does not support HTML5 video.
+              </video>
+<p class="video-caption">Agile target tracking and autonomous obstacle avoidance with YOPOv2-Tracker.</p>
+</details>
+</article>
+</div>
+</section>
+<section id="projects">
+<h2>🧑&zwj;💻 <span class="lang-en">Research Experience &amp; Projects</span><span class="lang-zh" lang="zh-CN">科研与项目经历</span></h2>
+<div class="project-list">
+<article class="project">
+<div class="project-meta"><span class="lang-en">2026.05-2026.09<br>Tianjin University</span><span class="lang-zh" lang="zh-CN">2026.05&ndash;2026.09<br>天津大学</span></div>
+<div>
+<h3><span class="lang-en">Geometry-Aware Monocular Planning for Agile Flight</span><span class="lang-zh" lang="zh-CN">面向敏捷飞行的几何感知单目规划</span></h3>
+<p><span class="lang-en">To address the inherent scale ambiguity and limited geometric cues of monocular vision, developed a geometry-aware end-to-end planner that combines consecutive monocular frames with camera pose and learns from a privileged depth expert through cross-modal supervision. Built a 3DGS-based sim-to-real pipeline and achieved 8 m/s in simulation and 6.5 m/s in real-world flight.</span><span class="lang-zh" lang="zh-CN">针对单目视觉固有的尺度模糊与几何线索不足问题，研发结合连续单目图像与相机位姿的几何感知端到端规划器，并利用特权深度专家进行跨模态监督。搭建基于 3DGS 的 Sim-to-Real 流程，仿真与实机最高飞行速度分别达到 8 m/s 和 6.5 m/s。</span></p>
+</div>
+</article>
+<article class="project">
+<div class="project-meta"><span class="lang-en">2025.09&ndash;2026.02<br>TJU AIR LAB &times; Xi&rsquo;an Flight Automatic Control Research Institute</span><span class="lang-zh" lang="zh-CN">2025.09&ndash;2026.02<br>TJU AIR LAB &times; 西安飞行自动控制研究所</span></div>
+<div>
+<h3><span class="lang-en">Lightweight End-to-End Planning from a Single Depth Image</span><span class="lang-zh" lang="zh-CN">基于单帧深度图的轻量化端到端规划</span></h3>
+<p><span class="lang-en">Developed a lightweight end-to-end planner that fuses a single depth image with UAV state to predict terminal states and generate polynomial trajectories online. Optimized and quantized the model with RKNN, achieving approximately 20 ms inference latency on RK3588; the complete onboard system was delivered and passed acceptance testing.</span><span class="lang-zh" lang="zh-CN">研发融合单帧深度图与无人机状态的轻量化端到端规划器，预测终点状态并在线生成多项式轨迹。基于 RKNN 完成模型优化与量化，在 RK3588 上实现约 20 ms 推理延迟；整套机载系统完成交付并通过验收。</span></p>
+</div>
+</article>
+<article class="project">
+<div class="project-meta"><span class="lang-en">2024.12&ndash;2025.09<br>TJU AIR LAB &times; Autel</span><span class="lang-zh" lang="zh-CN">2024.12&ndash;2025.09<br>TJU AIR LAB &times; 道通智能</span></div>
+<div>
+<h3><span class="lang-en">Multimodal Omnidirectional Planning for Agile Flight</span><span class="lang-zh" lang="zh-CN">面向敏捷飞行的多模态全向规划</span></h3>
+<p><span class="lang-en">Developed an omnidirectional planner that fuses multi-view depth, UAV state, and target information, with planning-expert guidance for anticipatory obstacle avoidance. Built the quadrotor platform and validated the system at approximately 6 m/s in simulation and 3 m/s in real-world forest environments.</span><span class="lang-zh" lang="zh-CN">研发融合多视角深度、无人机状态与目标信息的全向规划器，并利用规划专家引导实现前瞻式避障。完成四旋翼平台搭建，在仿真和真实森林环境中分别以约 6 m/s 和 3 m/s 完成验证。</span></p>
+</div>
+</article>
+<article class="project">
+<div class="project-meta"><span class="lang-en">2024.04&ndash;Present<br>TJU AIR LAB</span><span class="lang-zh" lang="zh-CN">2024.04&ndash;至今<br>TJU AIR LAB</span></div>
+<div>
+<h3><span class="lang-en">Compact Quadrotor Platform Design &amp; Development</span><span class="lang-zh" lang="zh-CN">紧凑型四旋翼平台设计与研发</span></h3>
+<p><span class="lang-en">Led the ongoing design and development of the compact quadrotor platform currently used by the lab for agile-flight research. The hardware design is open-sourced in the YOPO repository, with detailed specifications and assembly information provided in the hardware documentation.</span><span class="lang-zh" lang="zh-CN">自本科阶段起持续负责实验室现用紧凑型四旋翼平台的设计与研发，用于敏捷飞行研究。硬件设计已在 YOPO 仓库开源，详细参数与装配信息见硬件说明。</span></p>
+<div class="paper-links"><a href="https://github.com/TJU-Aerial-Robotics/YOPO" target="_blank" rel="noopener noreferrer">GitHub</a> <a href="assets/docs/hardware-list.pdf" target="_blank" rel="noopener noreferrer"><span class="lang-en">Hardware Documentation (PDF)</span><span class="lang-zh" lang="zh-CN">硬件说明（PDF）</span></a></div>
+</div>
+</article>
+</div>
+</section>
+<section id="education">
+<h2>🏫 <span class="lang-en">Education &amp; Skills</span><span class="lang-zh" lang="zh-CN">教育经历与技能</span></h2>
+<div class="education">
+<div class="edu-item">
+<div>
+<h3><span class="lang-en">M.Eng. in Control Theory and Control Engineering</span><span class="lang-zh" lang="zh-CN">控制理论与控制工程 硕士</span></h3>
+<p><span class="lang-en">Tianjin University</span><span class="lang-zh" lang="zh-CN">天津大学</span></p>
+</div>
+<time>2025&ndash;2028</time></div>
+<div class="edu-item">
+<div>
+<h3><span class="lang-en">B.Eng. in Mechanical Engineering and Automation</span><span class="lang-zh" lang="zh-CN">机械设计制造及其自动化 学士</span></h3>
+<p><span class="lang-en">Tianjin University &middot; GPA 3.7/4.0 &middot; Weighted average 88.2/100</span><span class="lang-zh" lang="zh-CN">天津大学 &middot; GPA 3.7/4.0 &middot; 加权成绩 88.2/100</span></p>
+</div>
+<time>2021&ndash;2025</time></div>
+</div>
+<p class="skills"><span class="lang-en"><strong>Technical skills:</strong> PyTorch, Transformers, ResNet, ROS, Python, Linux, Git, ONNX, TensorRT, RKNN, multi-view fusion, and sim-to-real deployment.</span><span class="lang-zh" lang="zh-CN"><strong>技术栈：</strong>PyTorch、Transformer、ResNet、ROS、Python、Linux、Git、ONNX、TensorRT、RKNN、多视角融合与仿真到实机部署。</span></p>
+</section>
+</main></div>
+<footer>&copy; <span id="year"></span> Wencan Feng. <span class="lang-en">Hosted on GitHub Pages.</span><span class="lang-zh" lang="zh-CN">由 GitHub Pages 托管。</span></footer>
+<p>
+<script>
+    document.querySelector('#year').textContent = new Date().getFullYear();
+
+    const languageButton = document.querySelector('#language-toggle');
+    const storageKey = 'wencan-language';
+
+    function setLanguage(language) {
+      const chinese = language === 'zh';
+      document.documentElement.lang = chinese ? 'zh-CN' : 'en';
+      languageButton.textContent = chinese ? 'EN' : '中文';
+      languageButton.setAttribute('aria-label', chinese ? 'Switch to English' : '切换到中文');
+      try { localStorage.setItem(storageKey, language); } catch (error) { /* Storage may be unavailable. */ }
+    }
+
+    let initialLanguage = 'en';
+    try { initialLanguage = localStorage.getItem(storageKey) === 'zh' ? 'zh' : 'en'; } catch (error) { /* Keep English. */ }
+    setLanguage(initialLanguage);
+    languageButton.addEventListener('click', function () {
+      setLanguage(document.documentElement.lang === 'zh-CN' ? 'en' : 'zh');
+    });
+  </script>
+</p>
+</body>
+</html>
