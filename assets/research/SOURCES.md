@@ -1,6 +1,5 @@
 # Image sources
 
-- `monocular-method.png`: https://github.com/Mioulo/GeoMonoPlan/blob/main/assets/method.png
 - `tracker-scenes.jpg`: https://github.com/TJU-Aerial-Robotics/YOPO-Tracker/blob/main/docs/scene.jpg
 - `quadrotor-platform.png`: https://github.com/Mioulo/GeoMonoPlan/blob/main/assets/drone.png
 - `hardware-top.png`, `hardware-underside.png`, `hardware-electronics.png`: original embedded images from https://github.com/TJU-Aerial-Robotics/YOPO-Tracker/blob/main/hardware/hardware_setup.pdf (pages 1–2), exported as PNG without changing the image content.
@@ -16,3 +15,6 @@
 
 - `omnidirectional-simulation.gif`: existing T-ASE demo, 40.0–46.0 s; 480 × 270, 10 fps, looping, original playback speed preserved.
 - `omnidirectional-real-flight.gif`: existing T-ASE demo, 66.0–72.0 s; 480 × 270, 10 fps, looping, original playback speed preserved.
+
+- `monocular-real-fpv.gif`: original download from https://github.com/Mioulo/GeoMonoPlan/blob/main/assets/real-world/1st.gif
+- `monocular-real-tpv.gif`: original download from https://github.com/Mioulo/GeoMonoPlan/blob/main/assets/real-world/3rd.gif

@@ -212,6 +212,8 @@
       .visual-row { gap: 6px; }
       .hardware-gallery { gap: 8px; }
     }
+    .mono-real-row { grid-template-columns: minmax(0, 4fr) minmax(0, 3fr); align-items: start; }
+    .mono-real-row img { aspect-ratio: auto; }
   </style>
 </head>
 <body>
@@ -255,7 +257,10 @@
 <div class="paper-links"><a href="https://github.com/Mioulo/GeoMonoPlan" target="_blank" rel="noopener noreferrer">GitHub</a></div>
 <div class="publication-visuals">
 <div class="simulation-grid"><a href="https://github.com/Mioulo/GeoMonoPlan#-simulation-flights" target="_blank" rel="noopener noreferrer"><img src="assets/research/monocular-unity-grid.gif" alt="Nine Unity monocular flight demonstrations" width="480" height="274" loading="lazy" decoding="async"></a></div>
-<div class="framework-image"><a href="assets/research/monocular-method.png" target="_blank" rel="noopener noreferrer"><img src="assets/research/monocular-method.png" alt="Monocular planning framework and three-stage training" width="1291" height="630" loading="lazy" decoding="async"></a></div>
+<div class="visual-row mono-real-row">
+<a href="assets/research/monocular-real-fpv.gif" target="_blank" rel="noopener noreferrer"><img src="assets/research/monocular-real-fpv.gif" alt="Monocular real-world flight from the onboard camera" width="640" height="240" loading="lazy" decoding="async"></a>
+<a href="assets/research/monocular-real-tpv.gif" target="_blank" rel="noopener noreferrer"><img src="assets/research/monocular-real-tpv.gif" alt="Monocular real-world flight from the third-person view" width="360" height="180" loading="lazy" decoding="async"></a>
+</div>
 </div>
 <details class="paper-demos">
 <summary>🎬 Demo Video</summary>
