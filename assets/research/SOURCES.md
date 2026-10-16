@@ -13,3 +13,6 @@
 - `yopo-platform.png`: original embedded image `Image26.jpg` from page 1 of the site's existing `assets/docs/hardware-list.pdf`, exported as PNG.
 - `omnidirectional-framework-fig2.png`: Figure 2 on page 3 of the author-provided manuscript; rendered directly from the original PDF at 5x resolution, excluding its caption and surrounding text. Only the figure image is published.
 - `omnidirectional-platform.jpg`: crop (650, 610, 1210, 1018) of the same frame, showing the original omnidirectional quadrotor platform.
+
+- `omnidirectional-simulation.gif`: existing T-ASE demo, 40.0–46.0 s; 480 × 270, 10 fps, looping, original playback speed preserved.
+- `omnidirectional-real-flight.gif`: existing T-ASE demo, 66.0–72.0 s; 480 × 270, 10 fps, looping, original playback speed preserved.
